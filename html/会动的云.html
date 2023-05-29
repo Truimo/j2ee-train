@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*所有选择器*/
+        * {
+            /*去除内外边框*/
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        section {
+            width: 100%;
+            height: 100%;
+            /*背景颜色*/
+            background: hotpink;
+            /*超出区域隐藏*/
+            overflow: hidden;
+            /*子绝父相*/
+            position: relative;
+            animation: bg 25s linear infinite;
+        }
+
+        @keyframes bg {
+            0% {
+                /*背景颜色*/
+                background: antiquewhite;
+            }
+            20% {
+                /*背景颜色*/
+                background: darkorange;
+            }
+            50% {
+                /*背景颜色*/
+                background: green;
+            }
+            70% {
+                background: blue;
+            }
+            100% {
+                /*背景颜色*/
+                background: #0075d5;
+            }
+        }
+
+        section div {
+            width: 300%;
+            height: 100%;
+            /*绝对定位*/
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /*设置第一多云*/
+        section div:nth-child(1) {
+            /*背景图片*/
+            background: url("image/cloud_one.png");
+            /*CSS 动画 动画名称 时间 速度  循环播放*/
+            animation: play 50s linear infinite;
+        }
+
+        section div:nth-child(2) {
+            /*背景图片*/
+            background: url("image/cloud_two.png");
+            /*CSS 动画 动画名称 时间 速度  循环播放*/
+            animation: play 75s linear infinite;
+        }
+
+        section div:nth-child(3) {
+            /*背景图片*/
+            background: url("image/cloud_three.png");
+            /*CSS 动画 动画名称 时间 速度  循环播放*/
+            animation: play 100s linear infinite;
+        }
+
+        /*动画的执行一定结合帧率*/
+        @keyframes play {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: -200%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--内容主体部分-->
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+</body>
+</html>

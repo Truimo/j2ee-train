@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: lightgoldenrodyellow;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border: aliceblue;
+            /*盒子居中*/
+            margin: 50px auto;
+            /*背景图片*/
+            background: url("image/wanzi.jpg");
+            /*设置背景大小*/
+            background-size: cover;
+            /*设置相框*/
+            border-top: solid palegoldenrod;
+            border-bottom: solid palegoldenrod;
+            border-left: solid palegoldenrod;
+            /*设置圆角边框*/
+            border-radius: 10% 10% 10% 10%;
+            /*设置盒子阴影 x轴偏移 y轴偏移 阴影半径 阴影颜色*/
+            box-shadow: 5px 5px 5px gray;
+            /*过渡*/
+            transition: all 0.5s;
+        }
+
+        /*绑定悬浮事件*/
+        .box:hover {
+            /*放大 旋转 css 2d*/
+            transform: scale(1.5);
+            /*设置盒子阴影 x轴偏移 y轴偏移 阴影半径 阴影颜色*/
+            box-shadow: 5px 5px 5px silver;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
