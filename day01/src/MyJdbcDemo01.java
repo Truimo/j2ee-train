@@ -7,7 +7,7 @@ public class MyJdbcDemo01 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         // 1. 导入驱动jar包
         // 2. 注册驱动
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         // 3. 获取数据库连接对象
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
         // 4. 定义sql语句
