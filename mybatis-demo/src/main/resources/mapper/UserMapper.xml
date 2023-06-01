@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.UserDao">
+    <select id="selectUserById" resultType="org.example.entity.User">
+        SELECT *
+        FROM t_users
+        WHERE `id` = #{arg0}
+    </select>
+</mapper>
