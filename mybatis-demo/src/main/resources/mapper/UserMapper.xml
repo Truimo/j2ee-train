@@ -7,4 +7,45 @@
         FROM t_users
         WHERE `id` = #{arg0}
     </select>
+    <select id="selectUserByIdAndPwd" resultType="User">
+        SELECT *
+        FROM t_users
+        WHERE `id` = #{id}
+          AND `password` = #{password}
+    </select>
+    <select id="selectUserByMap" resultType="User">
+        SELECT *
+        FROM t_users
+        WHERE `id` = #{id}
+          AND `password` = #{password}
+    </select>
+    <select id="selectUserByObject" parameterType="User" resultType="User">
+        SELECT *
+        FROM t_users
+        WHERE `id` = #{id}
+          AND `password` = #{password}
+    </select>
+    <select id="selectUserByKeyWords" resultType="User">
+        SELECT *
+        FROM t_users
+        WHERE `name` LIKE CONCAT('%', #{keyWords}, '%')
+    </select>
+    <delete id="deleteUserById">
+        DELETE
+        FROM t_users
+        WHERE `id` = #{id}
+    </delete>
+    <update id="updateUserById" parameterType="User">
+        UPDATE t_users
+        SET `name` = #{name}
+        WHERE `id` = #{id}
+    </update>
+    <delete id="deleteUsersByIds">
+        DELETE
+        FROM t_users
+        WHERE `id` IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
