@@ -6,4 +6,46 @@
 
     <bean id="userDao" class="org.example.dao.impl.UserDaoImpl"/>
     <bean id="userService" class="org.example.service.impl.UserServiceImpl"/>
+    <bean id="ul" class="org.example.entity.User">
+        <property name="id" value="1"/>
+        <property name="name" value="张三"/>
+        <property name="password" value="123456"/>
+        <property name="sex" value="男"/>
+        <property name="birthday" value="1999/01/01"/>
+        <property name="registerTime" value="2020/01/01"/>
+        <property name="hobbys">
+            <array>
+                <value>ball</value>
+                <value>swim</value>
+                <value>sing</value>
+            </array>
+        </property>
+        <property name="phones">
+            <set>
+                <value>12345678901</value>
+                <value>12345678902</value>
+                <value>12345678903</value>
+            </set>
+        </property>
+        <property name="names">
+            <list>
+                <value>jack</value>
+                <value>tom</value>
+                <value>marry</value>
+            </list>
+        </property>
+        <property name="countries">
+            <map>
+                <entry key="CN" value="chine"/>
+                <entry key="JP" value="日本"/>
+                <entry key="KR" value="Korea"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="stu" class="org.example.entity.Student">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="张三"/>
+        <constructor-arg name="sex" value="男"/>
+        <constructor-arg name="age" value="20"/>
+    </bean>
 </beans>
