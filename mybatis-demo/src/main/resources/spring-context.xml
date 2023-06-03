@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmls="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="userDao" class="org.example.dao.impl.UserDaoImpl"/>
     <bean id="userService" class="org.example.service.impl.UserServiceImpl"/>
+    <bean id="beforeAdvice" class="org.example.advice.MyBeforeAdvice"/>
+    <bean id="afterAdvice" class="org.example.advice.MyAfterAdvice"/>
+    <aop:config>
+        <aop:pointcut id="pc_cut" expression="execution(* selectUser())"/>
+        <aop:advisor advice-ref="beforeAdvice" pointcut-ref="pc_cut"/>
+        <aop:advisor advice-ref="afterAdvice" pointcut-ref="pc_cut"/>
+    </aop:config>
     <bean id="ul" class="org.example.entity.User">
         <property name="id" value="1"/>
         <property name="name" value="张三"/>
