@@ -1,6 +1,6 @@
 package org.example.entity;
 
-import java.util.Date;
+import java.util.*;
 
 public class User {
     private Integer id;
@@ -9,6 +9,10 @@ public class User {
     private String sex;
     private Date birthday;
     private Date registerTime;
+    private String[] hobbys;
+    private Set<String> phones;
+    private List<String> names;
+    private Map<String, String> countries;
 
     @Override
     public String toString() {
@@ -19,6 +23,10 @@ public class User {
                 ", sex='" + sex + '\'' +
                 ", birthday=" + birthday +
                 ", registerTime=" + registerTime +
+                ", hobbys=" + Arrays.toString(hobbys) +
+                ", phones=" + phones +
+                ", names=" + names +
+                ", countries=" + countries +
                 '}';
     }
 
@@ -68,5 +76,37 @@ public class User {
 
     public void setRegisterTime(Date registerTime) {
         this.registerTime = registerTime;
+    }
+
+    public String[] getHobbys() {
+        return hobbys;
+    }
+
+    public void setHobbys(String[] hobbys) {
+        this.hobbys = hobbys;
+    }
+
+    public Set<String> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(Set<String> phones) {
+        this.phones = phones;
+    }
+
+    public List<String> getNames() {
+        return names;
+    }
+
+    public void setNames(List<String> names) {
+        this.names = names;
+    }
+
+    public Map<String, String> getCountries() {
+        return countries;
+    }
+
+    public void setCountries(Map<String, String> countries) {
+        this.countries = countries;
     }
 }
