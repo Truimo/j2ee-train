@@ -12,7 +12,7 @@ public class Spring01Test {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
         UserDao userDao = (UserDao) context.getBean("userDao");
         UserService userService = (UserService) context.getBean("userService");
-        userService.selectUserById(1);
+        // userService.selectUserById(1);
     }
 
     @Test
@@ -27,5 +27,12 @@ public class Spring01Test {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
         Student stu = (Student) context.getBean("stu");
         System.out.println(stu);
+    }
+
+    @Test
+    public void test04() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
+        UserService userService = (UserService) context.getBean("userService");
+        userService.selectUser();
     }
 }
